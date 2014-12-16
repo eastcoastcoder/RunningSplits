@@ -2,6 +2,11 @@
 <resources>
 
     <string name="app_name">Running Splits</string>
+    <string name="my_splits">My Splits</string>
+    <string name="numbered_lap">Lap </string>
+    <string name="track_size">Track Size:</string>
+    <string name="target_time">Target Time:</string>
+    <string name="target_distance">Target Distance:</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
