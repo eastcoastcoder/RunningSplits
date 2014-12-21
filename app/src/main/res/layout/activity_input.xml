@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="start"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/track_size_text_view"/>
+        
+        <EditText
+            android:layout_width="185dp"
+            android:layout_height="wrap_content" 
+            android:id="@+id/track_size_edit_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/target_distance_text_view"/>
+
+        <EditText
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/target_distance_edit_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/target_time_text_view"/>
+
+        <EditText
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/target_time_edit_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="@string/calculate_button"
+            android:onClick="onSendUsersName" />
+
+    </LinearLayout>
+    
+</LinearLayout>
