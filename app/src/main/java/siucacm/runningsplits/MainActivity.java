@@ -62,6 +62,16 @@ public class MainActivity extends ActionBarActivity {
 
         lapCount.append(" " + m.getNumberLaps() + ":");
 
+        /* Dealing With Time:
+        calc.setTotalTime(targetTimeSentBack);
+        calc.calcLapSeconds();
+        calc.calcLapTime();
+        //calc.getLapTime() + " or " + calc.getLapSeconds()
+
+        //Lap Printer Needs to Populate A ListView
+        calc.lapPrinter();
+        */
+
     }
 
 }
