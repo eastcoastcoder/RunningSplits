@@ -1,12 +1,12 @@
 package siucacm.runningsplits;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -14,27 +14,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final TextView firstTextView = (TextView) findViewById(R.id.textView);
-
-        Button firstButton = (Button) findViewById(R.id.calc_button);
-
-        firstButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                firstTextView.setText("You Clicked!");
-            }
-        });
-
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
@@ -51,4 +30,38 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    //OnIntent: what I want to do, how to do it, go do it
+    public void onGetNameClick(View view) {
+
+        Intent getNameScreenIntent = new Intent(this, InputActivity.class);
+
+        final int result = 1;
+
+        getNameScreenIntent.putExtra("callingActivity", "MainActivity");
+
+        startActivityForResult(getNameScreenIntent, result);
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        TextView lapCount = (TextView) findViewById(R.id.lap_count);
+
+        RunningModel m = new RunningModel();
+        String trackSizeSentBack = data.getStringExtra("TrackSize");
+        String targetDistanceSentBack = data.getStringExtra("TargetDistance");
+        String targetTimeSentBack = data.getStringExtra("TargetTime");
+
+        m.setTrackSize(Integer.parseInt(trackSizeSentBack));
+        m.setDistance(Integer.parseInt(targetDistanceSentBack));
+        m.calcNumberLaps();
+
+        lapCount.append(" " + m.getNumberLaps() + ":");
+
+    }
+
 }
